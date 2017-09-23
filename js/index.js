@@ -3,7 +3,19 @@
 
 //-----------------------------------------------------------------------
 
-var gTurbines = [];
+var gTurbines = [],
+	measure = [
+		[12, 3],
+		[9, 6],
+		[11, 4],
+		[8, 7],
+		[12, 3],
+		[13, 2],
+		[10, 5],
+		[9, 6],
+		[11, 4],
+		[10, 5]
+	];
 
 //-----------------------------------------------------------------------
 
@@ -80,6 +92,19 @@ function initPipes(parent) {
 
 //-----------------------------------------------------------------------
 
+function initTanks(parent) {
+	'use strict';
+	var i, str = '';
+
+	for (i = 0; i < gTurbines.length; ++i) {
+		str += '<div class="tank fill0" style="top: ' + (i * 2.2) + 'em;background-size: ' + measure[i][1] + 'em 2.1em;left: ' + measure[i][0] + 'em;"></div>';
+	}
+
+	parent.html(parent.html() + str);
+}
+
+//-----------------------------------------------------------------------
+
 function initScreen() {
 	'use strict';
 
@@ -88,6 +113,7 @@ function initScreen() {
 	initBoard(node);
 	initTurbines(node);
 	initPipes(node);
+	initTanks(node);
 	initWorker(node);
 
 	initTurbineEvents(node);

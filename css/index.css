@@ -93,13 +93,47 @@ body {
 	z-index: 98;
 }
 
+.tank {
+	background-position: 0 .4em;
+	background-repeat: no-repeat;
+	background-size: 2em 2.1em;
+	width: 10em;
+	height: 2.5em;
+	position: absolute;
+	left: 6em;
+	top: 2em;
+	pointer-events: none;
+	z-index: 98;
+}
+.tank.fill0 {
+	background-image: url(../assets/tank0-small.png);
+}
+.tank.fill1 {
+	background-image: url(../assets/tank1-small.png);
+}
+.tank.fill2 {
+	background-image: url(../assets/tank2-small.png);
+}
+.tank.fill3 {
+	background-image: url(../assets/tank3-small.png);
+}
+.tank.fill4 {
+	background-image: url(../assets/tank4-small.png);
+}
+.tank.fill5 {
+	background-image: url(../assets/tank5-small.png);
+}
+.tank.fill6 {
+	background-image: url(../assets/tank6-small.png);
+}
+
 .worker {
 	background-image: url(../assets/man-worker-small.png);
 	background-size: 2em;
 	width: 2em;
 	height: 2em;
 	position: absolute;
-	left: 20em;
+	left: 17em;
 	top: 2em;
 	pointer-events: none;
 }

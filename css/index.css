@@ -1,3 +1,68 @@
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.turbine {
+	background-size: 2em;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	left: 15em;
+	top: 2em;
+}
+.turbine.off {
+	background-image: url(../assets/turbine-stop-small.png);
+}
+.turbine.on1 {
+	background-image: url(../assets/turbine-work-big.png);
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
+}
+.turbine.on2 {
+	background-image: url(../assets/turbine-work-big.png);
+	-webkit-animation: rotating 1s linear infinite;
+	-moz-animation: rotating 1s linear infinite;
+	-ms-animation: rotating 1s linear infinite;
+	-o-animation: rotating 1s linear infinite;
+	animation: rotating 1s linear infinite;
+}
+.turbine.on3 {
+	background-image: url(../assets/turbine-work-big.png);
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
+}
+
 .worker {
 	background-image: url(../assets/man-worker-small.png);
 	background-size: 2em;
@@ -20,4 +85,5 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
+	pointer-events: none;
 }

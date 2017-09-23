@@ -3,11 +3,15 @@
 
 //-----------------------------------------------------------------------
 
+var gTurbines = [];
+
+//-----------------------------------------------------------------------
+
 function initWorker(parent) {
 	'use strict';
 	var i, str = '';
 
-	for (i = 0; i < 10; ++i) {
+	for (i = 0; i < gTurbines.length; ++i) {
 		str += '<div class="worker" style="top: ' + (i * 2.2) + 'em"></div>';
 	}
 
@@ -27,17 +31,51 @@ function initBoard(parent) {
 
 //-----------------------------------------------------------------------
 
+function initTurbines(parent) {
+	'use strict';
+	var i, str = '';
+
+	for (i = 0; i < 10; ++i) {
+		str += '<div class="turbine off" style="top: ' + (i * 2.2) + 'em"></div>';
+		gTurbines.push(0);
+	}
+
+	parent.html(parent.html() + str);
+}
+
+//-----------------------------------------------------------------------
+
+function initTurbineEvents(parent) {
+	'use strict';
+	var i;
+
+	$('.turbine').on('click', function () {
+		var elem = $(this);
+
+		if (elem.hasClass('off')) {
+			elem.removeClass('off').addClass('on1');
+		} else if (elem.hasClass('on1')) {
+			elem.removeClass('on1').addClass('on2');
+		} else if (elem.hasClass('on2')) {
+			elem.removeClass('on2').addClass('on3');
+		} else {
+			elem.removeClass('on1').removeClass('on2').removeClass('on3').addClass('off');
+		}
+	});
+}
+
+//-----------------------------------------------------------------------
+
 function initScreen() {
 	'use strict';
 
-	var node = $('#start'),
-		str = '';
-
-	str = 'Hallo Welt';
-	node.html(str);
+	var node = $('#start');
 
 	initBoard(node);
+	initTurbines(node);
 	initWorker(node);
+
+	initTurbineEvents(node);
 }
 
 initScreen();

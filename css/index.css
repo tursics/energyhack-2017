@@ -126,6 +126,9 @@ body {
 .tank.fill6 {
 	background-image: url(../assets/tank6-small.png);
 }
+.tank.crash {
+	background-image: url(../assets/crash-small.png);
+}
 
 .worker {
 	background-image: url(../assets/man-worker-small.png);
@@ -135,7 +138,6 @@ body {
 	position: absolute;
 	left: 17em;
 	top: 2em;
-	pointer-events: none;
 }
 
 .board-left {
@@ -163,4 +165,20 @@ body {
 	right: 0;
 	bottom: 0;
 	pointer-events: none;
+}
+.end {
+	z-index: 200;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.75);
+	color: #fff;
+	padding: 4em 0 0 4em;
+	background-image: url(../assets/man-help-big.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: none;
 }

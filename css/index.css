@@ -27,6 +27,21 @@
   }
 }
 
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	background: #ccccff; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #ccccff, #ccff99); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #ccccff, #ccff99); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #ccccff, #ccff99); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #ccccff, #ccff99); /* Standard syntax */
+}
+
 .turbine {
 	background-size: 2em;
 	width: 2em;
@@ -34,6 +49,7 @@
 	position: absolute;
 	left: 15em;
 	top: 2em;
+	z-index: 99;
 }
 .turbine.off {
 	background-image: url(../assets/turbine-stop-small.png);
@@ -63,6 +79,20 @@
 	animation: rotating 2s linear infinite;
 }
 
+.pipes {
+	background-image: url(../assets/pipe-small.png);
+	background-position: 0 .5em;
+	background-repeat: no-repeat;
+	background-size: 10em 1em;
+	width: 10em;
+	height: 2em;
+	position: absolute;
+	left: 6em;
+	top: 2em;
+	pointer-events: none;
+	z-index: 98;
+}
+
 .worker {
 	background-image: url(../assets/man-worker-small.png);
 	background-size: 2em;
@@ -74,13 +104,26 @@
 	pointer-events: none;
 }
 
+.board-left {
+	background-image: url(../assets/source-small.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 5em;
+	pointer-events: none;
+}
 .board-bottom {
 	background-image: url(../assets/board-small.png);
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: contain;
 	position: fixed;
-	z-index: 100;
+	z-index: 101;
 	top: 0;
 	left: 0;
 	right: 0;

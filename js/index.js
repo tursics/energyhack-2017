@@ -24,6 +24,7 @@ function initBoard(parent) {
 	'use strict';
 	var str = '';
 
+	str += '<div class="board-left"></div>';
 	str += '<div class="board-bottom"></div>';
 
 	parent.html(parent.html() + str);
@@ -66,6 +67,19 @@ function initTurbineEvents(parent) {
 
 //-----------------------------------------------------------------------
 
+function initPipes(parent) {
+	'use strict';
+	var i, str = '';
+
+	for (i = 0; i < gTurbines.length; ++i) {
+		str += '<div class="pipes" style="top: ' + (i * 2.2) + 'em"></div>';
+	}
+
+	parent.html(parent.html() + str);
+}
+
+//-----------------------------------------------------------------------
+
 function initScreen() {
 	'use strict';
 
@@ -73,6 +87,7 @@ function initScreen() {
 
 	initBoard(node);
 	initTurbines(node);
+	initPipes(node);
 	initWorker(node);
 
 	initTurbineEvents(node);

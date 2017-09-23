@@ -1,0 +1,23 @@
+.worker {
+	background-image: url(../assets/man-worker-small.png);
+	background-size: 2em;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	left: 20em;
+	top: 2em;
+	pointer-events: none;
+}
+
+.board-bottom {
+	background-image: url(../assets/board-small.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

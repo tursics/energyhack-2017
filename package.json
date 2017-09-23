@@ -1,0 +1,19 @@
+{
+  "name": "energyhack-2017",
+  "version": "1.0.0",
+  "description": "Energy Hack 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tursics@github.com/tursics/energyhack-2017.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tursics/energyhack-2017/issues"
+  },
+  "homepage": "https://github.com/tursics/energyhack-2017#readme"
+}

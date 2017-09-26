@@ -6,7 +6,7 @@ In der Kategorie "Infrastruktur" haben wir mit offene Daten der Berliner Wasserb
 
 ![](https://raw.githubusercontent.com/tursics/energyhack-2017/master/docs/img1.png?token=AFJ-kEVxHZfvzkzBRto6o_UGKF9C2CT5ks5Z1AzswA%3D%3D)
 
-Die Abwasser aus dem Haushalt (z.B. WC, Waschbecken und Dusche) und Regenwasser werden in 16 Klärwärken in Berlin gesammelt.
+Die Abwasser aus dem Haushalt (z.B. WC, Waschbecken und Dusche) und Regenwasser werden in 16 Klärwerken in Berlin gesammelt.
 In Rohren (waagerechte Linien) werden sie in unterschiedliche großen Tanks gesammelt.
 Unterschiedlich leistungsstarke Pumpen fördern das Wasser weiter.
 

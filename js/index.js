@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $*/
+/*global $,setInterval*/
 
 //-----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ function initWorker(parent) {
 
 function initEnd(parent) {
 	'use strict';
-	var i, str = '';
+	var str = '';
 
 	str += '<div class="end">Leider verloren</div>';
 
@@ -43,7 +43,8 @@ function initEnd(parent) {
 
 //-----------------------------------------------------------------------
 
-function initEndEvent(parent) {
+//function initEndEvent(parent) {
+function initEndEvent() {
 	'use strict';
 
 	$('#worker0').on('click', function () {
@@ -121,7 +122,8 @@ function decreaseTank(node) {
 
 //-----------------------------------------------------------------------
 
-function initTurbineEvents(parent) {
+//function initTurbineEvents(parent) {
+function initTurbineEvents() {
 	'use strict';
 	var i;
 
@@ -190,10 +192,11 @@ function initTanks(parent) {
 
 //-----------------------------------------------------------------------
 
-function initTankEvents(parent) {
+//function initTankEvents(parent) {
+function initTankEvents() {
 	'use strict';
 
-	setInterval(function () { increaseTank($('#tank' + 0)); }, 3000);
+	setInterval(function () { increaseTank($('#tank')); }, 3000);
 	setInterval(function () { increaseTank($('#tank' + 1)); }, 5000);
 	setInterval(function () { increaseTank($('#tank' + 2)); }, 3000);
 	setInterval(function () { increaseTank($('#tank' + 3)); }, 3000);

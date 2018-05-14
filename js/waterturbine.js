@@ -1,27 +1,12 @@
 /*jslint browser: true*/
-/*global $,setInterval*/
-
-//-----------------------------------------------------------------------
-
-var gTurbines = [],
-	measure = [
-		[12, 3],
-		[9, 6],
-		[11, 4],
-		[8, 7],
-		[12, 3],
-		[13, 2],
-		[10, 5],
-		[9, 6],
-		[11, 4],
-		[10, 5]
-	];
+/*global $,setInterval,pig,waterTank*/
 
 //-----------------------------------------------------------------------
 
 var waterTurbine = {
 
 	parent: null,
+	turbines: [],
 
 	//-------------------------------------------------------------------
 
@@ -33,7 +18,7 @@ var waterTurbine = {
 
 		for (i = 0; i < 10; ++i) {
 			str += '<div id="turbine' + i + '" class="turbine on3" style="top: ' + (i * 2.2) + 'em"></div>';
-			gTurbines.push(0);
+			this.turbines.push(0);
 		}
 
 		this.parent.html(this.parent.html() + str);
@@ -43,7 +28,8 @@ var waterTurbine = {
 
 	initEvents: function () {
 		'use strict';
-		var i;
+		var i,
+			that = this;
 
 		$('.turbine').on('click', function () {
 			var elem = $(this);
@@ -60,7 +46,7 @@ var waterTurbine = {
 		});
 
 		setInterval(function () {
-			for (i = 0; i < gTurbines.length; ++i) {
+			for (i = 0; i < that.turbines.length; ++i) {
 				var turbine = $('#turbine' + i),
 					elem = $('#tank' + i);
 				if (turbine.hasClass('on2')) {
@@ -71,18 +57,26 @@ var waterTurbine = {
 			}
 		}, 1000);
 		setInterval(function () {
-			for (i = 0; i < gTurbines.length; ++i) {
+			for (i = 0; i < that.turbines.length; ++i) {
 				var turbine = $('#turbine' + i),
 					elem = $('#tank' + i);
 				if (turbine.hasClass('on1')) {
 					decreaseTank(elem);
-					increaseCosts(1);
+					pig.increaseCosts(1);
 				} else if (turbine.hasClass('on3')) {
 					decreaseTank(elem);
 					pig.increaseCosts(1);
 				}
 			}
 		}, 2000);
+	},
+
+	//-------------------------------------------------------------------
+
+	length: function () {
+		'use strict';
+
+		return waterTank.length();
 	}
 
 	//-------------------------------------------------------------------

@@ -7,7 +7,7 @@ function initWorker(parent) {
 	'use strict';
 	var i, str = '';
 
-	for (i = 0; i < gTurbines.length; ++i) {
+	for (i = 0; i < waterTurbine.length(); ++i) {
 		str += '<div id="worker' + i + '" class="worker" style="top: ' + (i * 2.2) + 'em"></div>';
 	}
 
@@ -50,28 +50,6 @@ function initBoard(parent) {
 
 //-----------------------------------------------------------------------
 
-function increaseTank(node) {
-	'use strict';
-
-	if (node.hasClass('fill0')) {
-		node.removeClass('fill0').addClass('fill1');
-	} else if (node.hasClass('fill1')) {
-		node.removeClass('fill1').addClass('fill2');
-	} else if (node.hasClass('fill2')) {
-		node.removeClass('fill2').addClass('fill3');
-	} else if (node.hasClass('fill3')) {
-		node.removeClass('fill3').addClass('fill4');
-	} else if (node.hasClass('fill4')) {
-		node.removeClass('fill4').addClass('fill5');
-	} else if (node.hasClass('fill5')) {
-		node.removeClass('fill5').addClass('fill6');
-	} else if (node.hasClass('fill6')) {
-		node.removeClass('fill6').addClass('crash');
-	}
-}
-
-//-----------------------------------------------------------------------
-
 function decreaseTank(node) {
 	'use strict';
 
@@ -96,42 +74,11 @@ function initPipes(parent) {
 	'use strict';
 	var i, str = '';
 
-	for (i = 0; i < gTurbines.length; ++i) {
+	for (i = 0; i < waterTurbine.length(); ++i) {
 		str += '<div class="pipes" style="top: ' + (i * 2.2) + 'em"></div>';
 	}
 
 	parent.html(parent.html() + str);
-}
-
-//-----------------------------------------------------------------------
-
-function initTanks(parent) {
-	'use strict';
-	var i, str = '';
-
-	for (i = 0; i < gTurbines.length; ++i) {
-		str += '<div id="tank' + i + '" class="tank fill0" style="top: ' + (i * 2.2) + 'em;background-size: ' + measure[i][1] + 'em 2.1em;left: ' + measure[i][0] + 'em;"></div>';
-	}
-
-	parent.html(parent.html() + str);
-}
-
-//-----------------------------------------------------------------------
-
-//function initTankEvents(parent) {
-function initTankEvents() {
-	'use strict';
-
-	setInterval(function () { increaseTank($('#tank')); }, 3000);
-	setInterval(function () { increaseTank($('#tank' + 1)); }, 5000);
-	setInterval(function () { increaseTank($('#tank' + 2)); }, 3000);
-	setInterval(function () { increaseTank($('#tank' + 3)); }, 3000);
-	setInterval(function () { increaseTank($('#tank' + 4)); }, 6000);
-	setInterval(function () { increaseTank($('#tank' + 5)); }, 7000);
-	setInterval(function () { increaseTank($('#tank' + 6)); }, 3000);
-	setInterval(function () { increaseTank($('#tank' + 7)); }, 4000);
-	setInterval(function () { increaseTank($('#tank' + 8)); }, 6000);
-	setInterval(function () { increaseTank($('#tank' + 9)); }, 4000);
 }
 
 //-----------------------------------------------------------------------
@@ -146,11 +93,11 @@ function initScreen() {
 	pig.init(node);
 	windTurbine.init(node);
 	initPipes(node);
-	initTanks(node);
+	waterTank.init(node);
 	initWorker(node);
 	initEnd(node);
 
-	initTankEvents(node);
+	waterTank.initEvents();
 	waterTurbine.initEvents();
 	pig.initEvents();
 	windTurbine.initEvents();

@@ -66,7 +66,7 @@ var waterTurbine = {
 				if (turbine.hasClass('on2')) {
 					decreaseTank(elem);
 					decreaseTank(elem);
-					windTurbine.increaseCosts(2);
+					pig.increaseCosts(2);
 				}
 			}
 		}, 1000);
@@ -79,7 +79,7 @@ var waterTurbine = {
 					increaseCosts(1);
 				} else if (turbine.hasClass('on3')) {
 					decreaseTank(elem);
-					windTurbine.increaseCosts(1);
+					pig.increaseCosts(1);
 				}
 			}
 		}, 2000);

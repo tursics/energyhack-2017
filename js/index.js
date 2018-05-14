@@ -143,6 +143,7 @@ function initScreen() {
 
 	initBoard(node);
 	waterTurbine.init(node);
+	pig.init(node);
 	windTurbine.init(node);
 	initPipes(node);
 	initTanks(node);
@@ -151,6 +152,7 @@ function initScreen() {
 
 	initTankEvents(node);
 	waterTurbine.initEvents();
+	pig.initEvents();
 	windTurbine.initEvents();
 	initEndEvent(node);
 }

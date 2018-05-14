@@ -43,6 +43,7 @@ function initBoard(parent) {
 	var str = '';
 
 	str += '<div class="board-left"></div>';
+	str += '<div class="board-right"><div id="windturbine"></div><div id="windturbinerotor"></div></div>';
 	str += '<div class="board-bottom"></div>';
 
 	parent.html(parent.html() + str);

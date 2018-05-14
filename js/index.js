@@ -43,8 +43,7 @@ function initBoard(parent) {
 	var str = '';
 
 	str += '<div class="board-left"></div>';
-	str += '<div class="board-right"><div id="windturbine"></div><div id="windturbinerotor"></div></div>';
-	str += '<div class="board-bottom"><div id="pig"></div><div id="coin"></div></div>';
+	str += '<div class="board-bottom"></div>';
 
 	parent.html(parent.html() + str);
 }
@@ -178,7 +177,8 @@ function initScreen() {
 	var node = $('#start');
 
 	initBoard(node);
-	turbine.init(node);
+	waterTurbine.init(node);
+	windTurbine.init(node);
 	initPipes(node);
 	initTanks(node);
 	initWorker(node);
@@ -186,7 +186,8 @@ function initScreen() {
 
 	initTankEvents(node);
 	initCostsEvents(node);
-	turbine.initEvents();
+	waterTurbine.initEvents();
+	windTurbine.initEvents();
 	initEndEvent(node);
 }
 

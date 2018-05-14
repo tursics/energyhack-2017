@@ -19,7 +19,7 @@ var gTurbines = [],
 
 //-----------------------------------------------------------------------
 
-var turbine = {
+var waterTurbine = {
 
 	parent: null,
 

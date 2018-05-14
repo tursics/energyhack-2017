@@ -32,7 +32,7 @@ var turbine = {
 		this.parent = parent;
 
 		for (i = 0; i < 10; ++i) {
-			str += '<div id="turbine' + i + '" class="turbine on1" style="top: ' + (i * 2.2) + 'em"></div>';
+			str += '<div id="turbine' + i + '" class="turbine on3" style="top: ' + (i * 2.2) + 'em"></div>';
 			gTurbines.push(0);
 		}
 
@@ -66,6 +66,7 @@ var turbine = {
 				if (turbine.hasClass('on2')) {
 					decreaseTank(elem);
 					decreaseTank(elem);
+					increaseCosts(2);
 				}
 			}
 		}, 1000);
@@ -75,8 +76,10 @@ var turbine = {
 					elem = $('#tank' + i);
 				if (turbine.hasClass('on1')) {
 					decreaseTank(elem);
+					increaseCosts(1);
 				} else if (turbine.hasClass('on3')) {
 					decreaseTank(elem);
+					increaseCosts(1);
 				}
 			}
 		}, 2000);

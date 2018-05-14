@@ -93,6 +93,41 @@ function decreaseTank(node) {
 
 //-----------------------------------------------------------------------
 
+var gCosts = 0;
+var gCostsShowed = 0;
+
+function increaseCosts(value) {
+	'use strict';
+
+	gCosts += value;
+}
+
+//-----------------------------------------------------------------------
+
+function initCostsEvents() {
+	'use strict';
+
+	setInterval(function () {
+		var modValue = 7;
+
+		if (parseInt(gCosts / modValue, 10) !== parseInt(gCostsShowed / modValue, 10)) {
+			if (!$('#pig').hasClass('eat')) {
+				$('#pig').addClass('eat');
+				$('#coin').addClass('eat');
+			}
+		} else {
+			if ($('#pig').hasClass('eat')) {
+				$('#pig').removeClass('eat');
+				$('#coin').removeClass('eat');
+			}
+		}
+
+		gCostsShowed = gCosts;
+	}, 500);
+}
+
+//-----------------------------------------------------------------------
+
 function initPipes(parent) {
 	'use strict';
 	var i, str = '';
@@ -150,6 +185,7 @@ function initScreen() {
 	initEnd(node);
 
 	initTankEvents(node);
+	initCostsEvents(node);
 	turbine.initEvents();
 	initEndEvent(node);
 }

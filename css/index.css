@@ -26,6 +26,56 @@
     transform: rotate(360deg);
   }
 }
+@-webkit-keyframes pigeating /* Safari and Chrome */ {
+  from {
+    width: 15%;
+    height: 15%;
+	right: 10%;
+	bottom: 5%;
+  }
+  to {
+    width: 20%;
+    height: 20%;
+	right: 7.5%;
+	bottom: 2.5%;
+  }
+}
+@keyframes pigeating {
+  0% {
+    width: 15%;
+    height: 15%;
+	right: 10%;
+	bottom: 5%;
+  }
+  40% {
+    width: 20%;
+    height: 20%;
+	right: 7.5%;
+	bottom: 2.5%;
+  }
+  100% {
+    width: 15%;
+    height: 15%;
+	right: 10%;
+	bottom: 5%;
+  }
+}
+@-webkit-keyframes coineating /* Safari and Chrome */ {
+  from {
+	bottom: 25%;
+  }
+  to {
+	bottom: 15%;
+  }
+}
+@keyframes coineating {
+  from {
+	bottom: 25%;
+  }
+  to {
+	bottom: 15%;
+  }
+}
 
 html {
 	height: 100%;
@@ -218,6 +268,35 @@ body {
 	pointer-events: none;
 	width: 15%;
 	height: 15%;
+}
+.board-bottom #pig.eat {
+	-webkit-animation: pigeating .5s linear infinite;
+	-moz-animation: pigeating .5s linear infinite;
+	-ms-animation: pigeating .5s linear infinite;
+	-o-animation: pigeating .5s linear infinite;
+	animation: pigeating .5s linear infinite;
+}
+.board-bottom #coin {
+	background-image: url(../assets/coin-small.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: fixed;
+	z-index: 103;
+	right: 15.5%;
+	bottom: 15%;
+	pointer-events: none;
+	width: 7%;
+	height: 7%;
+	display: none;
+}
+.board-bottom #coin.eat {
+	display: block;
+	-webkit-animation: coineating .5s linear infinite;
+	-moz-animation: coineating .5s linear infinite;
+	-ms-animation: coineating .5s linear infinite;
+	-o-animation: coineating .5s linear infinite;
+	animation: coineating .5s linear infinite;
 }
 .end {
 	z-index: 200;

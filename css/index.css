@@ -206,6 +206,19 @@ body {
 	bottom: 0;
 	pointer-events: none;
 }
+.board-bottom #pig {
+	background-image: url(../assets/pig-small.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: fixed;
+	z-index: 102;
+	right: 10%;
+	bottom: 5%;
+	pointer-events: none;
+	width: 15%;
+	height: 15%;
+}
 .end {
 	z-index: 200;
 	position: fixed;

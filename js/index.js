@@ -50,39 +50,6 @@ function initBoard(parent) {
 
 //-----------------------------------------------------------------------
 
-function decreaseTank(node) {
-	'use strict';
-
-	if (node.hasClass('fill6')) {
-		node.removeClass('fill6').addClass('fill5');
-	} else if (node.hasClass('fill5')) {
-		node.removeClass('fill5').addClass('fill4');
-	} else if (node.hasClass('fill4')) {
-		node.removeClass('fill4').addClass('fill3');
-	} else if (node.hasClass('fill3')) {
-		node.removeClass('fill3').addClass('fill2');
-	} else if (node.hasClass('fill2')) {
-		node.removeClass('fill2').addClass('fill1');
-	} else if (node.hasClass('fill1')) {
-		node.removeClass('fill1').addClass('fill0');
-	}
-}
-
-//-----------------------------------------------------------------------
-
-function initPipes(parent) {
-	'use strict';
-	var i, str = '';
-
-	for (i = 0; i < waterTurbine.length(); ++i) {
-		str += '<div class="pipes" style="top: ' + (i * 2.2) + 'em"></div>';
-	}
-
-	parent.html(parent.html() + str);
-}
-
-//-----------------------------------------------------------------------
-
 function initScreen() {
 	'use strict';
 
@@ -92,7 +59,6 @@ function initScreen() {
 	waterTurbine.init(node);
 	pig.init(node);
 	windTurbine.init(node);
-	initPipes(node);
 	waterTank.init(node);
 	initWorker(node);
 	initEnd(node);

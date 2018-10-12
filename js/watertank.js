@@ -29,6 +29,10 @@ var waterTank = {
 		var i, str = '';
 
 		for (i = 0; i < this.length(); ++i) {
+			str += '<div class="pipes" style="top: ' + (i * 2.2) + 'em"></div>';
+		}
+
+		for (i = 0; i < this.length(); ++i) {
 			str += '<div id="tank' + i + '" class="tank fill0" style="top: ' + (i * 2.2) + 'em;background-size: ' + this.measure[i][1] + 'em 2.1em;left: ' + this.measure[i][0] + 'em;"></div>';
 		}
 
@@ -54,6 +58,26 @@ var waterTank = {
 			node.removeClass('fill5').addClass('fill6');
 		} else if (node.hasClass('fill6')) {
 			node.removeClass('fill6').addClass('crash');
+		}
+	},
+
+	//-------------------------------------------------------------------
+
+	decreaseTank: function (node) {
+		'use strict';
+
+		if (node.hasClass('fill6')) {
+			node.removeClass('fill6').addClass('fill5');
+		} else if (node.hasClass('fill5')) {
+			node.removeClass('fill5').addClass('fill4');
+		} else if (node.hasClass('fill4')) {
+			node.removeClass('fill4').addClass('fill3');
+		} else if (node.hasClass('fill3')) {
+			node.removeClass('fill3').addClass('fill2');
+		} else if (node.hasClass('fill2')) {
+			node.removeClass('fill2').addClass('fill1');
+		} else if (node.hasClass('fill1')) {
+			node.removeClass('fill1').addClass('fill0');
 		}
 	},
 

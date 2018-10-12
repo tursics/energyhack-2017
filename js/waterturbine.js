@@ -50,8 +50,8 @@ var waterTurbine = {
 				var turbine = $('#turbine' + i),
 					elem = $('#tank' + i);
 				if (turbine.hasClass('on2')) {
-					decreaseTank(elem);
-					decreaseTank(elem);
+					waterTank.decreaseTank(elem);
+					waterTank.decreaseTank(elem);
 					pig.increaseCosts(2);
 				}
 			}
@@ -61,10 +61,10 @@ var waterTurbine = {
 				var turbine = $('#turbine' + i),
 					elem = $('#tank' + i);
 				if (turbine.hasClass('on1')) {
-					decreaseTank(elem);
+					waterTank.decreaseTank(elem);
 					pig.increaseCosts(1);
 				} else if (turbine.hasClass('on3')) {
-					decreaseTank(elem);
+					waterTank.decreaseTank(elem);
 					pig.increaseCosts(1);
 				}
 			}

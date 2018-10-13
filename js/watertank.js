@@ -104,7 +104,11 @@ var waterTank = {
 			if ($(tank).hasClass('on3')) {
 				sum += 1;
 			}
+		}
 
+		for (i = 0; i < hexagon.items.length; ++i) {
+			tank = $(hexagon.items[i].selector);
+			
 			if ($(tank).hasClass('coal')) {
 				sum2 += 1;
 			}
@@ -123,7 +127,7 @@ var waterTank = {
 		}
 
 		$('#speed-marker').css({'transform' : 'rotate('+ (-60 + 120 * (sum / 20)) +'deg)'});
-		$('.board-bottom').removeClass('speed1').removeClass('speed2').removeClass('speed3').removeClass('speed4').removeClass('speed5').addClass('speed4');
+		$('.board-bottom').removeClass('speed1').removeClass('speed2').removeClass('speed3').removeClass('speed4').removeClass('speed5').addClass('speed' + Math.trunc(sum2 / 2));
 	},
 
 	//-------------------------------------------------------------------

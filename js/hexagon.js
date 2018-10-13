@@ -24,7 +24,7 @@ var hexagon = {
 				tank: i
 			});
 
-			str += '<div id="' + selector + '" class="hex pumpStation fill0"></div>';
+			str += '<div id="' + selector + '" class="hex pumpStation fill0 turbine on3"></div>';
 		}
 
 		this.parent.html(this.parent.html() + str);
@@ -39,6 +39,23 @@ var hexagon = {
 
 		for (i = 0; i < this.items.length; ++i) {
 			if (this.items[i].tank === number) {
+				return $(this.items[i].selector);
+			}
+		}
+
+		return null;
+	},
+
+	//-------------------------------------------------------------------
+
+	getTankFromElement: function (element) {
+		'use strict';
+
+		var i, selector;
+
+		selector = '#hex' + element.attr('id').replace('turbine', '');
+		for (i = 0; i < this.items.length; ++i) {
+			if (this.items[i].selector === selector) {
 				return $(this.items[i].selector);
 			}
 		}
@@ -70,7 +87,7 @@ var hexagon = {
 			$(this.items[i].selector).css({
 				'left': 2 + 2.5 * ((i % 2) + (line % 2) * 0.5) + 'em',
 				'top': 2 + 2.15 * (line) + 'em',
-				'z-index': 100 - line
+				'z-index': 50 + line
 			});
 		}
 	}

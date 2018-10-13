@@ -26,22 +26,29 @@ var waterTurbine = {
 
 	//-------------------------------------------------------------------
 
+	next: function (turbine) {
+		'use strict';
+
+		if (turbine.hasClass('off')) {
+			turbine.removeClass('off').addClass('on1');
+		} else if (turbine.hasClass('on1')) {
+			turbine.removeClass('on1').addClass('on2');
+		} else if (turbine.hasClass('on2')) {
+			turbine.removeClass('on2').addClass('on3');
+		} else {
+			turbine.removeClass('on1').removeClass('on2').removeClass('on3').addClass('off');
+		}
+	},
+
+	//-------------------------------------------------------------------
+
 	initEvents: function () {
 		'use strict';
 		var i;
 
 		$('.turbine').on('click', function () {
-			var elem = $(this);
-
-			if (elem.hasClass('off')) {
-				elem.removeClass('off').addClass('on1');
-			} else if (elem.hasClass('on1')) {
-				elem.removeClass('on1').addClass('on2');
-			} else if (elem.hasClass('on2')) {
-				elem.removeClass('on2').addClass('on3');
-			} else {
-				elem.removeClass('on1').removeClass('on2').removeClass('on3').addClass('off');
-			}
+			waterTurbine.next($(this));
+			waterTurbine.next(hexagon.getTankFromElement($(this)));
 		});
 
 		setInterval(function () {

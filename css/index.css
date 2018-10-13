@@ -93,6 +93,7 @@ body {
 }
 
 .turbine {
+	background-image: url(../assets/turbine-stop-small.png);
 	background-size: 2em;
 	width: 2em;
 	height: 2em;
@@ -100,33 +101,6 @@ body {
 	left: 15em;
 	top: 2em;
 	z-index: 99;
-}
-.turbine.off {
-	background-image: url(../assets/turbine-stop-small.png);
-}
-.turbine.on1 {
-	background-image: url(../assets/turbine-work-big.png);
-	-webkit-animation: rotating 2s linear infinite;
-	-moz-animation: rotating 2s linear infinite;
-	-ms-animation: rotating 2s linear infinite;
-	-o-animation: rotating 2s linear infinite;
-	animation: rotating 2s linear infinite;
-}
-.turbine.on2 {
-	background-image: url(../assets/turbine-work-big.png);
-	-webkit-animation: rotating 1s linear infinite;
-	-moz-animation: rotating 1s linear infinite;
-	-ms-animation: rotating 1s linear infinite;
-	-o-animation: rotating 1s linear infinite;
-	animation: rotating 1s linear infinite;
-}
-.turbine.on3 {
-	background-image: url(../assets/turbine-work-big.png);
-	-webkit-animation: rotating 2s linear infinite;
-	-moz-animation: rotating 2s linear infinite;
-	-ms-animation: rotating 2s linear infinite;
-	-o-animation: rotating 2s linear infinite;
-	animation: rotating 2s linear infinite;
 }
 
 .pipes {
@@ -212,6 +186,40 @@ body {
 }
 .hex.crash {
 	background-image: url(../assets/hex-crash.png);
+}
+.hex.turbine:after {
+	background-image: url(../assets/water-turbine.png);
+	background-size: 1em;
+	content: '';
+	display: block;
+	left: 1.3em;
+	position: absolute;
+	height: 1em;
+	top: .8em;
+	width: 1em;
+}
+.turbine.off:after {
+}
+.turbine.on1:after {
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
+}
+.turbine.on2:after {
+	-webkit-animation: rotating 1s linear infinite;
+	-moz-animation: rotating 1s linear infinite;
+	-ms-animation: rotating 1s linear infinite;
+	-o-animation: rotating 1s linear infinite;
+	animation: rotating 1s linear infinite;
+}
+.turbine.on3:after {
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
 }
 
 .worker {

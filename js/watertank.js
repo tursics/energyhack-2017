@@ -90,7 +90,7 @@ var waterTank = {
 	updateSpeedo: function () {
 		'use strict';
 
-		var i, tank, sum = 0;
+		var i, tank, sum = 0, sum2 = 0;
 
 		for (i = 0; i < this.length(); ++i) {
 			tank = hexagon.getTank(i);
@@ -104,10 +104,26 @@ var waterTank = {
 			if ($(tank).hasClass('on3')) {
 				sum += 1;
 			}
+
+			if ($(tank).hasClass('coal')) {
+				sum2 += 1;
+			}
+			if ($(tank).hasClass('gas')) {
+				sum2 += 1;
+			}
+			if ($(tank).hasClass('nuclear')) {
+				sum2 += 1;
+			}
+			if ($(tank).hasClass('solar')) {
+				sum2 += 0;
+			}
+			if ($(tank).hasClass('wind')) {
+				sum2 += 0;
+			}
 		}
 
-//		$('#speed-marker').css({'transform' : 'rotate('+ sum +'deg)'});
 		$('#speed-marker').css({'transform' : 'rotate('+ (-60 + 120 * (sum / 20)) +'deg)'});
+		$('.board-bottom').removeClass('speed1').removeClass('speed2').removeClass('speed3').removeClass('speed4').removeClass('speed5').addClass('speed4');
 	},
 
 	//-------------------------------------------------------------------

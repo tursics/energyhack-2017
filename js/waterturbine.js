@@ -37,12 +37,37 @@ var waterTurbine = {
 
 	//-------------------------------------------------------------------
 
+	nextProducer: function (turbine) {
+		'use strict';
+
+		if (turbine === null) {
+			return;
+		}
+
+		if (turbine.hasClass('coal')) {
+			turbine.removeClass('coal').addClass('gas');
+		} else if (turbine.hasClass('gas')) {
+			turbine.removeClass('gas').addClass('nuclear');
+		} else if (turbine.hasClass('nuclear')) {
+			turbine.removeClass('nuclear').addClass('solar');
+		} else if (turbine.hasClass('solar')) {
+			turbine.removeClass('solar').addClass('wind');
+		} else if (turbine.hasClass('wind')) {
+			turbine.removeClass('wind').addClass('coal');
+		}
+	},
+
+	//-------------------------------------------------------------------
+
 	initEvents: function () {
 		'use strict';
 		var i;
 
 		$('.turbine').on('click', function () {
 			waterTurbine.next(hexagon.getTankFromElement($(this)));
+		});
+		$('.producer').on('click', function () {
+			waterTurbine.nextProducer(hexagon.getTankFromElement($(this)));
 		});
 
 		setInterval(function () {

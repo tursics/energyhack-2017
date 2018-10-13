@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global setInterval,hexagon*/
+/*global $,setInterval,setTimeout,hexagon*/
 
 //-----------------------------------------------------------------------
 
@@ -50,6 +50,10 @@ var waterTank = {
 			node.removeClass('fill5').addClass('fill6');
 		} else if (node.hasClass('fill6')) {
 			node.removeClass('fill6').addClass('crash');
+
+			setTimeout(function () {
+				$('.end').show();
+			}, 1000);
 		}
 	},
 

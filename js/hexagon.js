@@ -14,15 +14,16 @@ var hexagon = {
 	init: function (parent) {
 		'use strict';
 
-		function addPumpStation(index, tank) {
+		function addPumpStation(index, tank, level) {
 			var selector = 'hex' + index;
 
 			hexagon.items.push({
 				selector: '#' + selector,
-				tank: tank
+				tank: tank,
+				level: level
 			});
 
-			return '<div id="' + selector + '" class="hex pumpStation fill0 turbine on3"></div>';
+			return '<div id="' + selector + '" class="hex pumpStation fill0 station level' + level + ' turbine on3"></div>';
 		}
 
 		function addGras(index) {
@@ -51,41 +52,41 @@ var hexagon = {
 
 		var i = 0, str = '';
 
-		str += addPumpStation(i++, 0);
+		str += addPumpStation(i++, 0, 0);
 		str += addGras(i++);
-		str += addPumpStation(i++, 1);
+		str += addPumpStation(i++, 1, 0);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addProducer(i++, 'gas');
 		str += addProducer(i++, 'coal');
-		str += addPumpStation(i++, 2);
-		str += addPumpStation(i++, 3);
+		str += addPumpStation(i++, 2, 0);
+		str += addPumpStation(i++, 3, 0);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addProducer(i++, 'coal');
 		str += addProducer(i++, 'coal');
 		str += addProducer(i++, 'nuclear');
-		str += addPumpStation(i++, 4);
+		str += addPumpStation(i++, 4, 0);
 		str += addGras(i++);
-		str += addPumpStation(i++, 5);
+		str += addPumpStation(i++, 5, 0);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addProducer(i++, 'solar');
 		str += addProducer(i++, 'coal');
 		str += addGras(i++);
-		str += addPumpStation(i++, 6);
-		str += addPumpStation(i++, 7);
+		str += addPumpStation(i++, 6, 4);
+		str += addPumpStation(i++, 7, 4);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addProducer(i++, 'coal');
 		str += addProducer(i++, 'wind');
 		str += addProducer(i++, 'coal');
-		str += addPumpStation(i++, 8);
+		str += addPumpStation(i++, 8, 0);
 		str += addGras(i++);
-		str += addPumpStation(i++, 9);
+		str += addPumpStation(i++, 9, 0);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addGras(i++);

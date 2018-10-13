@@ -105,47 +105,62 @@ body {
 	height: 3.5em;
 	position: absolute;
 }
-.hex:before {
+.hex {
 	background-image: url(../assets/hex-green.png);
 }
-.hex.fill0:before {
+.hex.fill0 {
 	background-image: url(../assets/hex-tank0.png);
 }
-.hex.fill1:before {
+.hex.fill1 {
 	background-image: url(../assets/hex-tank1.png);
 }
-.hex.fill2:before {
+.hex.fill2 {
 	background-image: url(../assets/hex-tank2.png);
 }
-.hex.fill3:before {
+.hex.fill3 {
 	background-image: url(../assets/hex-tank3.png);
 }
-.hex.fill4:before {
+.hex.fill4 {
 	background-image: url(../assets/hex-tank4.png);
 }
-.hex.fill5:before {
+.hex.fill5 {
 	background-image: url(../assets/hex-tank5.png);
 }
-.hex.fill6:before {
+.hex.fill6 {
 	background-image: url(../assets/hex-tank6.png);
 }
-.hex.crash:before {
+.hex.crash {
 	background-image: url(../assets/hex-crash.png);
 }
-.hex.producer.coal:after {
+.hex.producer.coal:before {
 	background-image: url(../assets/hex-producer-coal.png);
 }
-.hex.producer.gas:after {
+.hex.producer.gas:before {
 	background-image: url(../assets/hex-producer-gas.png);
 }
-.hex.producer.nuclear:after {
+.hex.producer.nuclear:before {
 	background-image: url(../assets/hex-producer-nuclear.png);
 }
-.hex.producer.solar:after {
+.hex.producer.solar:before {
 	background-image: url(../assets/hex-producer-solar.png);
 }
-.hex.producer.wind:after {
+.hex.producer.wind:before {
 	background-image: url(../assets/hex-producer-wind.png);
+}
+.hex.station.level0:before {
+	background-image: url(../assets/hex-station-a.png);
+}
+.hex.station.level1:before {
+	background-image: url(../assets/hex-station-b.png);
+}
+.hex.station.level2:before {
+	background-image: url(../assets/hex-station-c.png);
+}
+.hex.station.level3:before {
+	background-image: url(../assets/hex-station-d.png);
+}
+.hex.station.level4:before {
+	background-image: url(../assets/hex-station-e.png);
 }
 .hex.turbine:after {
 	background-image: url(../assets/water-turbine.png);

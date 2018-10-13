@@ -36,6 +36,17 @@ var hexagon = {
 			return '<div id="' + selector + '" class="hex"></div>';
 		}
 
+		function addProducer(index, producer) {
+			var selector = 'hex' + index;
+
+			hexagon.items.push({
+				selector: '#' + selector,
+				tank: null
+			});
+
+			return '<div id="' + selector + '" class="hex producer ' + producer + '"></div>';
+		}
+
 		this.parent = parent;
 
 		var i = 0, str = '';
@@ -46,32 +57,32 @@ var hexagon = {
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addGras(i++);
-		str += addGras(i++);
-		str += addGras(i++);
+		str += addProducer(i++, 'gas');
+		str += addProducer(i++, 'coal');
 		str += addPumpStation(i++, 2);
 		str += addPumpStation(i++, 3);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addGras(i++);
-		str += addGras(i++);
-		str += addGras(i++);
-		str += addGras(i++);
+		str += addProducer(i++, 'coal');
+		str += addProducer(i++, 'coal');
+		str += addProducer(i++, 'nuclear');
 		str += addPumpStation(i++, 4);
 		str += addGras(i++);
 		str += addPumpStation(i++, 5);
 		str += addGras(i++);
 		str += addGras(i++);
 		str += addGras(i++);
-		str += addGras(i++);
-		str += addGras(i++);
+		str += addProducer(i++, 'solar');
+		str += addProducer(i++, 'coal');
 		str += addGras(i++);
 		str += addPumpStation(i++, 6);
 		str += addPumpStation(i++, 7);
 		str += addGras(i++);
 		str += addGras(i++);
-		str += addGras(i++);
-		str += addGras(i++);
-		str += addGras(i++);
+		str += addProducer(i++, 'coal');
+		str += addProducer(i++, 'wind');
+		str += addProducer(i++, 'coal');
 		str += addPumpStation(i++, 8);
 		str += addGras(i++);
 		str += addPumpStation(i++, 9);

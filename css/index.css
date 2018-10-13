@@ -180,6 +180,40 @@ body {
 	background-image: url(../assets/crash-small.png);
 }
 
+.hex {
+	background-image: url(../assets/hex-void.png);
+	background-repeat: no-repeat;
+	background-size: 2.5em 3.5em;
+	width: 2.5em;
+	height: 3.5em;
+	position: absolute;
+	pointer-events: none;
+}
+.hex.fill0 {
+	background-image: url(../assets/hex-tank0.png);
+}
+.hex.fill1 {
+	background-image: url(../assets/hex-tank1.png);
+}
+.hex.fill2 {
+	background-image: url(../assets/hex-tank2.png);
+}
+.hex.fill3 {
+	background-image: url(../assets/hex-tank3.png);
+}
+.hex.fill4 {
+	background-image: url(../assets/hex-tank4.png);
+}
+.hex.fill5 {
+	background-image: url(../assets/hex-tank5.png);
+}
+.hex.fill6 {
+	background-image: url(../assets/hex-tank6.png);
+}
+.hex.crash {
+	background-image: url(../assets/hex-crash.png);
+}
+
 .worker {
 	background-image: url(../assets/man-worker-small.png);
 	background-size: 2em;

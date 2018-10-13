@@ -42,7 +42,7 @@ function initBoard(parent) {
 	'use strict';
 	var str = '';
 
-	str += '<div class="board-left"></div>';
+//	str += '<div class="board-left"></div>';
 	str += '<div class="board-bottom"></div>';
 
 	parent.html(parent.html() + str);
@@ -56,6 +56,7 @@ function initScreen() {
 	var node = $('#start');
 
 	initBoard(node);
+	hexagon.init(node);
 	waterTurbine.init(node);
 	pig.init(node);
 	windTurbine.init(node);
@@ -63,6 +64,7 @@ function initScreen() {
 	initWorker(node);
 	initEnd(node);
 
+	hexagon.initEvents();
 	waterTank.initEvents();
 	waterTurbine.initEvents();
 	pig.initEvents();

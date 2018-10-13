@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $,setInterval*/
+/*global $,setInterval,hexagon*/
 
 //-----------------------------------------------------------------------
 
@@ -44,6 +44,10 @@ var waterTank = {
 	increaseTank: function (node) {
 		'use strict';
 
+		if (null === node) {
+			return;
+		}
+
 		if (node.hasClass('fill0')) {
 			node.removeClass('fill0').addClass('fill1');
 		} else if (node.hasClass('fill1')) {
@@ -65,6 +69,10 @@ var waterTank = {
 
 	decreaseTank: function (node) {
 		'use strict';
+
+		if (null === node) {
+			return;
+		}
 
 		if (node.hasClass('fill6')) {
 			node.removeClass('fill6').addClass('fill5');
@@ -90,33 +98,43 @@ var waterTank = {
 
 		setInterval(function () {
 			that.increaseTank($('#tank' + '0'));
+			waterTank.increaseTank(hexagon.getTank(0));
 		}, 3000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 1));
+			waterTank.increaseTank(hexagon.getTank(1));
 		}, 5000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 2));
+			waterTank.increaseTank(hexagon.getTank(2));
 		}, 3000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 3));
+			waterTank.increaseTank(hexagon.getTank(3));
 		}, 3000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 4));
+			waterTank.increaseTank(hexagon.getTank(4));
 		}, 6000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 5));
+			waterTank.increaseTank(hexagon.getTank(5));
 		}, 7000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 6));
+			waterTank.increaseTank(hexagon.getTank(6));
 		}, 3000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 7));
+			waterTank.increaseTank(hexagon.getTank(7));
 		}, 4000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 8));
+			waterTank.increaseTank(hexagon.getTank(8));
 		}, 6000);
 		setInterval(function () {
 			that.increaseTank($('#tank' + 9));
+			waterTank.increaseTank(hexagon.getTank(9));
 		}, 4000);
 	},
 

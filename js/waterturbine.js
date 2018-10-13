@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $,setInterval,pig,waterTank*/
+/*global $,setInterval,pig,waterTank,hexagon*/
 
 //-----------------------------------------------------------------------
 
@@ -28,8 +28,7 @@ var waterTurbine = {
 
 	initEvents: function () {
 		'use strict';
-		var i,
-			that = this;
+		var i;
 
 		$('.turbine').on('click', function () {
 			var elem = $(this);
@@ -46,25 +45,27 @@ var waterTurbine = {
 		});
 
 		setInterval(function () {
-			for (i = 0; i < that.turbines.length; ++i) {
-				var turbine = $('#turbine' + i),
-					elem = $('#tank' + i);
+			for (i = 0; i < waterTurbine.turbines.length; ++i) {
+				var turbine = $('#turbine' + i);
 				if (turbine.hasClass('on2')) {
-					waterTank.decreaseTank(elem);
-					waterTank.decreaseTank(elem);
+					waterTank.decreaseTank($('#tank' + i));
+					waterTank.decreaseTank($('#tank' + i));
+					waterTank.decreaseTank(hexagon.getTank(i));
+					waterTank.decreaseTank(hexagon.getTank(i));
 					pig.increaseCosts(2);
 				}
 			}
 		}, 1000);
 		setInterval(function () {
-			for (i = 0; i < that.turbines.length; ++i) {
-				var turbine = $('#turbine' + i),
-					elem = $('#tank' + i);
+			for (i = 0; i < waterTurbine.turbines.length; ++i) {
+				var turbine = $('#turbine' + i);
 				if (turbine.hasClass('on1')) {
-					waterTank.decreaseTank(elem);
+					waterTank.decreaseTank($('#tank' + i));
+					waterTank.decreaseTank(hexagon.getTank(i));
 					pig.increaseCosts(1);
 				} else if (turbine.hasClass('on3')) {
-					waterTank.decreaseTank(elem);
+					waterTank.decreaseTank($('#tank' + i));
+					waterTank.decreaseTank(hexagon.getTank(i));
 					pig.increaseCosts(1);
 				}
 			}

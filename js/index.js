@@ -43,9 +43,19 @@ function initBoard(parent) {
 	var str = '';
 
 //	str += '<div class="board-left"></div>';
-//	str += '<div class="board-bottom"></div>';
+	str += '<div class="board-bottom">';
+	str += '<div id="speed-marker"></div>';
+	str += '</div>';
 
 	parent.html(parent.html() + str);
+}
+
+//-----------------------------------------------------------------------
+
+function setSpeed(speed) {
+	'use strict';
+
+	$('.board-bottom').removeClass('speed1').removeClass('speed2').removeClass('speed3').removeClass('speed4').removeClass('speed5').addClass('speed' + speed);
 }
 
 //-----------------------------------------------------------------------
@@ -70,6 +80,8 @@ function initScreen() {
 //	pig.initEvents();
 //	windTurbine.initEvents();
 	initEndEvent(node);
+
+	setSpeed(4);
 }
 
 initScreen();

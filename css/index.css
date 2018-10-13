@@ -258,10 +258,9 @@ body {
 	animation: rotating 2s linear infinite;
 }
 .board-bottom {
-	background-image: url(../assets/board-small.png);
 	background-position: bottom;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 6em;
 	position: fixed;
 	z-index: 101;
 	top: 0;
@@ -270,6 +269,35 @@ body {
 	bottom: 0;
 	pointer-events: none;
 }
+.board-bottom.speed1 {
+	background-image: url(../assets/speedo-power1.png);
+}
+.board-bottom.speed2 {
+	background-image: url(../assets/speedo-power2.png);
+}
+.board-bottom.speed3 {
+	background-image: url(../assets/speedo-power3.png);
+}
+.board-bottom.speed4 {
+	background-image: url(../assets/speedo-power4.png);
+}
+.board-bottom.speed5 {
+	background-image: url(../assets/speedo-power5.png);
+}
+#speed-marker {
+	position: absolute;
+	bottom: 0;
+	width: 9em;
+	height: 9em;
+	left: 50%;
+	margin: -4.5em -4.5em;
+	background-image: url(../assets/speedo-consumption.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 1em;
+	transform: rotate(-60deg);
+}
+
 .board-bottom #pig {
 	background-image: url(../assets/pig-small.png);
 	background-position: bottom;

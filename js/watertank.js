@@ -55,6 +55,8 @@ var waterTank = {
 				$('.end').show();
 			}, 1000);
 		}
+
+		this.updateSpeedo();
 	},
 
 	//-------------------------------------------------------------------
@@ -79,6 +81,33 @@ var waterTank = {
 		} else if (node.hasClass('fill1')) {
 			node.removeClass('fill1').addClass('fill0');
 		}
+
+		this.updateSpeedo();
+	},
+
+	//-------------------------------------------------------------------
+
+	updateSpeedo: function () {
+		'use strict';
+
+		var i, tank, sum = 0;
+
+		for (i = 0; i < this.length(); ++i) {
+			tank = hexagon.getTank(i);
+
+			if ($(tank).hasClass('on1')) {
+				sum += 1;
+			}
+			if ($(tank).hasClass('on2')) {
+				sum += 2;
+			}
+			if ($(tank).hasClass('on3')) {
+				sum += 1;
+			}
+		}
+
+//		$('#speed-marker').css({'transform' : 'rotate('+ sum +'deg)'});
+		$('#speed-marker').css({'transform' : 'rotate('+ (-60 + 120 * (sum / 20)) +'deg)'});
 	},
 
 	//-------------------------------------------------------------------

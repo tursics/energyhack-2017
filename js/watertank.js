@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $,setInterval,hexagon*/
+/*global setInterval,hexagon*/
 
 //-----------------------------------------------------------------------
 
@@ -25,18 +25,6 @@ var waterTank = {
 		'use strict';
 
 		this.parent = parent;
-
-		var i, str = '';
-
-		for (i = 0; i < this.length(); ++i) {
-			str += '<div class="pipes" style="top: ' + (i * 2.2) + 'em"></div>';
-		}
-
-		for (i = 0; i < this.length(); ++i) {
-			str += '<div id="tank' + i + '" class="tank fill0" style="top: ' + (i * 2.2) + 'em;background-size: ' + this.measure[i][1] + 'em 2.1em;left: ' + this.measure[i][0] + 'em;"></div>';
-		}
-
-		this.parent.html(this.parent.html() + str);
 	},
 
 	//-------------------------------------------------------------------
@@ -94,46 +82,34 @@ var waterTank = {
 	initEvents: function () {
 		'use strict';
 
-		var that = this;
-
 		setInterval(function () {
-			that.increaseTank($('#tank' + '0'));
 			waterTank.increaseTank(hexagon.getTank(0));
 		}, 3000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 1));
 			waterTank.increaseTank(hexagon.getTank(1));
 		}, 5000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 2));
 			waterTank.increaseTank(hexagon.getTank(2));
 		}, 3000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 3));
 			waterTank.increaseTank(hexagon.getTank(3));
 		}, 3000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 4));
 			waterTank.increaseTank(hexagon.getTank(4));
 		}, 6000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 5));
 			waterTank.increaseTank(hexagon.getTank(5));
 		}, 7000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 6));
 			waterTank.increaseTank(hexagon.getTank(6));
 		}, 3000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 7));
 			waterTank.increaseTank(hexagon.getTank(7));
 		}, 4000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 8));
 			waterTank.increaseTank(hexagon.getTank(8));
 		}, 6000);
 		setInterval(function () {
-			that.increaseTank($('#tank' + 9));
 			waterTank.increaseTank(hexagon.getTank(9));
 		}, 4000);
 	},

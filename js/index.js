@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $,setInterval*/
+/*global $,waterTurbine,hexagon,waterTank*/
 
 //-----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ function initBoard(parent) {
 	var str = '';
 
 //	str += '<div class="board-left"></div>';
-	str += '<div class="board-bottom"></div>';
+//	str += '<div class="board-bottom"></div>';
 
 	parent.html(parent.html() + str);
 }
@@ -58,17 +58,17 @@ function initScreen() {
 	initBoard(node);
 	hexagon.init(node);
 	waterTurbine.init(node);
-	pig.init(node);
-	windTurbine.init(node);
+//	pig.init(node);
+//	windTurbine.init(node);
 	waterTank.init(node);
-	initWorker(node);
+//	initWorker(node);
 	initEnd(node);
 
 	hexagon.initEvents();
 	waterTank.initEvents();
 	waterTurbine.initEvents();
-	pig.initEvents();
-	windTurbine.initEvents();
+//	pig.initEvents();
+//	windTurbine.initEvents();
 	initEndEvent(node);
 }
 

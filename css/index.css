@@ -85,73 +85,7 @@ body {
 	margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-	background: #ccccff; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(left top, #ccccff, #ccff99); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(bottom right, #ccccff, #ccff99); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(bottom right, #ccccff, #ccff99); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(to bottom right, #ccccff, #ccff99); /* Standard syntax */
-}
-
-.turbine {
-	background-image: url(../assets/turbine-stop-small.png);
-	background-size: 2em;
-	width: 2em;
-	height: 2em;
-	position: absolute;
-	left: 15em;
-	top: 2em;
-	z-index: 99;
-}
-
-.pipes {
-	background-image: url(../assets/pipe-small.png);
-	background-position: 0 .5em;
-	background-repeat: no-repeat;
-	background-size: 10em 1em;
-	width: 10em;
-	height: 2em;
-	position: absolute;
-	left: 6em;
-	top: 2em;
-	pointer-events: none;
-	z-index: 98;
-}
-
-.tank {
-	background-position: 0 .4em;
-	background-repeat: no-repeat;
-	background-size: 2em 2.1em;
-	width: 10em;
-	height: 2.5em;
-	position: absolute;
-	left: 6em;
-	top: 2em;
-	pointer-events: none;
-	z-index: 98;
-}
-.tank.fill0 {
-	background-image: url(../assets/tank0-small.png);
-}
-.tank.fill1 {
-	background-image: url(../assets/tank1-small.png);
-}
-.tank.fill2 {
-	background-image: url(../assets/tank2-small.png);
-}
-.tank.fill3 {
-	background-image: url(../assets/tank3-small.png);
-}
-.tank.fill4 {
-	background-image: url(../assets/tank4-small.png);
-}
-.tank.fill5 {
-	background-image: url(../assets/tank5-small.png);
-}
-.tank.fill6 {
-	background-image: url(../assets/tank6-small.png);
-}
-.tank.crash {
-	background-image: url(../assets/crash-small.png);
+	background: #3d883d;
 }
 
 .hex {
@@ -161,7 +95,6 @@ body {
 	width: 2.5em;
 	height: 3.5em;
 	position: absolute;
-	pointer-events: none;
 }
 .hex.fill0 {
 	background-image: url(../assets/hex-tank0.png);

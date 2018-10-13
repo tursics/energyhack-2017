@@ -53,7 +53,7 @@ var hexagon = {
 
 		var i, selector;
 
-		selector = '#hex' + element.attr('id').replace('turbine', '');
+		selector = '#' + element.attr('id');
 		for (i = 0; i < this.items.length; ++i) {
 			if (this.items[i].selector === selector) {
 				return $(this.items[i].selector);

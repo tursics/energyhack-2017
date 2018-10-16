@@ -81,7 +81,7 @@ function initScreen() {
 //	windTurbine.initEvents();
 	initEndEvent(node);
 
-	setSpeed(4);
+	setSpeed(1);
 }
 
 initScreen();

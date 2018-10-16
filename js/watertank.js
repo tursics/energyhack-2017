@@ -126,7 +126,7 @@ var waterTank = {
 			}
 		}
 
-		$('#speed-marker').css({'transform' : 'rotate('+ (-60 + 120 * (sum / 20)) +'deg)'});
+		$('#speed-marker').css({'transform' : 'rotate(' + (-60 + 120 * (sum / 20)) + 'deg)'});
 		$('.board-bottom').removeClass('speed1').removeClass('speed2').removeClass('speed3').removeClass('speed4').removeClass('speed5').addClass('speed' + (1 + Math.trunc(sum2 / 3)));
 	},
 

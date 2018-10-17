@@ -3,7 +3,7 @@
 
 //-----------------------------------------------------------------------
 
-function initWorker(parent) {
+/*function initWorker(parent) {
 	'use strict';
 	var i, str = '';
 
@@ -12,7 +12,7 @@ function initWorker(parent) {
 	}
 
 	parent.html(parent.html() + str);
-}
+}*/
 
 //-----------------------------------------------------------------------
 
@@ -27,13 +27,12 @@ function initEnd(parent) {
 
 //-----------------------------------------------------------------------
 
-//function initEndEvent(parent) {
 function initEndEvent() {
 	'use strict';
 
-	$('#worker0').on('click', function () {
+/*	$('#worker0').on('click', function () {
 		$('.end').show();
-	});
+	});*/
 }
 
 //-----------------------------------------------------------------------

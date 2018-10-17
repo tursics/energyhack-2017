@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $,window*/
+/*global $,window,requestAnimationFrame*/
 
 //-----------------------------------------------------------------------
 
@@ -146,16 +146,35 @@ var hexagon = {
 	onResize: function () {
 		'use strict';
 
-		var i, line;
+		$('body').css('font-size', '1rem');
 
-		for (i = 0; i < this.items.length; ++i) {
-			line = Math.trunc(i / this.columns);
-			$(this.items[i].selector).css({
-				'left': 2 + 2.5 * ((i % this.columns) + (line % 2) * 0.5) + 'em',
-				'top': 0.5 + 2.15 * (line) + 'em',
-				'z-index': 50 + line
-			});
-		}
+		requestAnimationFrame(function () {
+			var i,
+				line,
+				width = window.innerWidth,
+				height = window.innerHeight,
+				itemW,
+				itemH,
+				ratioW,
+				ratioH,
+				rows = parseInt(hexagon.items.length / hexagon.columns, 10);
+
+			itemW = $(hexagon.items[0].selector)[0].scrollWidth;
+			itemH = $(hexagon.items[0].selector)[0].scrollHeight;
+			ratioW = parseInt(width / itemW / (hexagon.columns + 0.5) * 100, 10) / 100;
+			ratioH = parseInt(height / itemH / 0.62 / (rows + 0.33) * 100, 10) / 100;
+
+			$('body').css('font-size', (ratioH < ratioW ? ratioH : ratioW) + 'rem');
+
+			for (i = 0; i < hexagon.items.length; ++i) {
+				line = Math.trunc(i / hexagon.columns);
+				$(hexagon.items[i].selector).css({
+					'left': 2.5 * ((i % hexagon.columns) + (line % 2) * 0.5) + 'em',
+					'top': (-0.56 + 2.15 * (line)) + 'em',
+					'z-index': 50 + line
+				});
+			}
+		});
 	}
 
 	//-------------------------------------------------------------------

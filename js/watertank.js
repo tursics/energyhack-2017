@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $,setInterval,setTimeout,hexagon*/
+/*global $,setInterval,setTimeout,hexagon,board*/
 
 //-----------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ var waterTank = {
 			}, 1000);
 		}
 
-		this.updateSpeedo();
+		board.updateTacho();
 	},
 
 	//-------------------------------------------------------------------
@@ -82,52 +82,7 @@ var waterTank = {
 			node.removeClass('fill1').addClass('fill0');
 		}
 
-		this.updateSpeedo();
-	},
-
-	//-------------------------------------------------------------------
-
-	updateSpeedo: function () {
-		'use strict';
-
-		var i, tank, sum = 0, sum2 = 0;
-
-		for (i = 0; i < this.length(); ++i) {
-			tank = hexagon.getTank(i);
-
-			if ($(tank).hasClass('on1')) {
-				sum += 1;
-			}
-			if ($(tank).hasClass('on2')) {
-				sum += 2;
-			}
-			if ($(tank).hasClass('on3')) {
-				sum += 1;
-			}
-		}
-
-		for (i = 0; i < hexagon.items.length; ++i) {
-			tank = $(hexagon.items[i].selector);
-			
-			if ($(tank).hasClass('coal')) {
-				sum2 += 1.4;
-			}
-			if ($(tank).hasClass('gas')) {
-				sum2 += 1.4;
-			}
-			if ($(tank).hasClass('nuclear')) {
-				sum2 += 1.4;
-			}
-			if ($(tank).hasClass('solar')) {
-				sum2 += 0;
-			}
-			if ($(tank).hasClass('wind')) {
-				sum2 += 0;
-			}
-		}
-
-		$('#speed-marker').css({'transform' : 'rotate(' + (-60 + 120 * (sum / 20)) + 'deg)'});
-		$('.board-bottom').removeClass('speed1').removeClass('speed2').removeClass('speed3').removeClass('speed4').removeClass('speed5').addClass('speed' + (1 + Math.trunc(sum2 / 3)));
+		board.updateTacho();
 	},
 
 	//-------------------------------------------------------------------

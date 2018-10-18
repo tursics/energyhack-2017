@@ -1,5 +1,5 @@
 /*jslint browser: true*/
-/*global $,waterTurbine,hexagon,waterTank*/
+/*global $,waterTurbine,hexagon,waterTank,board*/
 
 //-----------------------------------------------------------------------
 
@@ -37,34 +37,12 @@ function initEndEvent() {
 
 //-----------------------------------------------------------------------
 
-function initBoard(parent) {
-	'use strict';
-	var str = '';
-
-//	str += '<div class="board-left"></div>';
-	str += '<div class="board-bottom">';
-	str += '<div id="speed-marker"></div>';
-	str += '</div>';
-
-	parent.html(parent.html() + str);
-}
-
-//-----------------------------------------------------------------------
-
-function setSpeed(speed) {
-	'use strict';
-
-	$('.board-bottom').removeClass('speed1').removeClass('speed2').removeClass('speed3').removeClass('speed4').removeClass('speed5').addClass('speed' + speed);
-}
-
-//-----------------------------------------------------------------------
-
 function initScreen() {
 	'use strict';
 
 	var node = $('#start');
 
-	initBoard(node);
+	board.init(node);
 	hexagon.init(node);
 	waterTurbine.init(node);
 //	pig.init(node);
@@ -73,14 +51,13 @@ function initScreen() {
 //	initWorker(node);
 	initEnd(node);
 
+	board.initEvents();
 	hexagon.initEvents();
 	waterTank.initEvents();
 	waterTurbine.initEvents();
 //	pig.initEvents();
 //	windTurbine.initEvents();
 	initEndEvent(node);
-
-	setSpeed(1);
 }
 
 initScreen();

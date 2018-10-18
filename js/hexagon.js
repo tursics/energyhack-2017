@@ -157,14 +157,16 @@ var hexagon = {
 				itemH,
 				ratioW,
 				ratioH,
+				ratio,
 				rows = parseInt(hexagon.items.length / hexagon.columns, 10);
 
 			itemW = $(hexagon.items[0].selector)[0].scrollWidth;
 			itemH = $(hexagon.items[0].selector)[0].scrollHeight;
 			ratioW = parseInt(width / itemW / (hexagon.columns + 0.5) * 100, 10) / 100;
 			ratioH = parseInt(height / itemH / 0.62 / (rows + 0.33) * 100, 10) / 100;
+			ratio = ratioH < ratioW ? ratioH : ratioW;
 
-			$('body').css('font-size', (ratioH < ratioW ? ratioH : ratioW) + 'rem');
+			$('body').css('font-size', ratio + 'rem');
 
 			for (i = 0; i < hexagon.items.length; ++i) {
 				line = Math.trunc(i / hexagon.columns);

@@ -4,7 +4,9 @@
   "description": "Energy Hack 2017",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "watch": "npm run watch:build",
+    "watch:build": "nodemon --watch src --exec \"npm run build\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/tursics/energyhack-2017/issues"
   },
-  "homepage": "https://github.com/tursics/energyhack-2017#readme"
+  "homepage": "https://github.com/tursics/energyhack-2017#readme",
+  "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
 }

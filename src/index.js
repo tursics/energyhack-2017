@@ -1,5 +1,10 @@
 /*jslint browser: true*/
-/*global $,waterTurbine,hexagon,waterTank,board*/
+/*global $,waterTurbine,hexagon,waterTank*/
+
+//-----------------------------------------------------------------------
+
+import * as board from './board';
+import * as hexagon from './hexagon';
 
 //-----------------------------------------------------------------------
 

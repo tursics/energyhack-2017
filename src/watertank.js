@@ -1,6 +1,3 @@
-/*jslint browser: true*/
-/*global $,setInterval,setTimeout*/
-
 //-----------------------------------------------------------------------
 
 import * as board from './board';

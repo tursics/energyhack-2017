@@ -1,9 +1,7 @@
-/*jslint browser: true*/
-/*global $,setInterval,pig*/
-
 //-----------------------------------------------------------------------
 
 import * as hexagon from './hexagon';
+import * as pig from './pig';
 import * as waterTank from './watertank';
 
 //-----------------------------------------------------------------------

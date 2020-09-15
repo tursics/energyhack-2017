@@ -1,60 +1,43 @@
-/*jslint browser: true*/
-/*global $,setInterval*/
+//-----------------------------------------------------------------------
+
+var parent = null;
+var modValue = 7;
+var costs = 0;
+var costsShowed = 0;
 
 //-----------------------------------------------------------------------
 
-var pig = {
+export function init(paramParent) {
+	parent = paramParent;
 
-	parent: null,
-	modValue: 7,
-	costs: 0,
-	costsShowed: 0,
+	var str = '<div id="pig"></div><div id="coin"></div>';
+	$('.board-bottom', parent).html($('.board-bottom', parent).html() + str);
+}
 
-	//-------------------------------------------------------------------
+//-----------------------------------------------------------------------
 
-	init: function (parent) {
-		'use strict';
-
-		this.parent = parent;
-
-		var str = '<div id="pig"></div><div id="coin"></div>';
-		$('.board-bottom', this.parent).html($('.board-bottom', this.parent).html() + str);
-	},
-
-	//-------------------------------------------------------------------
-
-	initEvents: function () {
-		'use strict';
-
-		var that = this;
-
-		setInterval(function () {
-			if (parseInt(that.costs / that.modValue, 10) !== parseInt(that.costsShowed / that.modValue, 10)) {
-				if (!$('#pig').hasClass('eat')) {
-					$('#pig').addClass('eat');
-					$('#coin').addClass('eat');
-				}
-			} else {
-				if ($('#pig').hasClass('eat')) {
-					$('#pig').removeClass('eat');
-					$('#coin').removeClass('eat');
-				}
+export function initEvents() {
+	setInterval(function () {
+		if (parseInt(costs / modValue, 10) !== parseInt(costsShowed / modValue, 10)) {
+			if (!$('#pig').hasClass('eat')) {
+				$('#pig').addClass('eat');
+				$('#coin').addClass('eat');
 			}
+		} else {
+			if ($('#pig').hasClass('eat')) {
+				$('#pig').removeClass('eat');
+				$('#coin').removeClass('eat');
+			}
+		}
 
-			that.costsShowed = that.costs;
-		}, 500);
-	},
+		costsShowed = costs;
+	}, 500);
+}
 
-	//-------------------------------------------------------------------
+//-----------------------------------------------------------------------
 
-	increaseCosts: function (value) {
-		'use strict';
-
-		this.costs += value;
-	}
-
-	//-------------------------------------------------------------------
-
-};
+export function increaseCosts(value) {
+	costs += value;
+}
 
 //-----------------------------------------------------------------------

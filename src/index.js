@@ -2,6 +2,7 @@
 
 import * as board from './board';
 import * as hexagon from './hexagon';
+import * as pig from './pig';
 import * as waterTank from './watertank';
 import * as waterTurbine from './waterturbine';
 
@@ -49,8 +50,7 @@ function initScreen() {
 	board.init(node);
 	hexagon.init(node);
 	waterTurbine.init(node);
-//	pig.init(node);
-//	windTurbine.init(node);
+	pig.init(node);
 	waterTank.init(node);
 //	initWorker(node);
 	initEnd(node);
@@ -59,8 +59,7 @@ function initScreen() {
 	hexagon.initEvents();
 	waterTank.initEvents();
 	waterTurbine.initEvents();
-//	pig.initEvents();
-//	windTurbine.initEvents();
+	pig.initEvents();
 	initEndEvent(node);
 }
 

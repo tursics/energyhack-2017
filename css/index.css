@@ -217,46 +217,6 @@ body {
 	width: 5em;
 	pointer-events: none;
 }
-.board-right {
-	position: fixed;
-	z-index: 100;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	width: 8em;
-	pointer-events: none;
-}
-.board-right #windturbine {
-	background-image: url(../assets/windturbine-small.png);
-	background-position: top left;
-	background-repeat: no-repeat;
-	background-size: contain;
-	position: fixed;
-	z-index: 100;
-	top: 6em;
-	right: 2.35em;
-	bottom: 0;
-	width: 3em;
-	pointer-events: none;
-}
-.board-right #windturbinerotor {
-	background-image: url(../assets/windturbinerotor-small.png);
-	background-position: top left;
-	background-repeat: no-repeat;
-	background-size: contain;
-	position: fixed;
-	z-index: 101;
-	top: 2em;
-	right: 0;
-	width: 8em;
-	height: 8em;
-	pointer-events: none;
-	-webkit-animation: rotating 2s linear infinite;
-	-moz-animation: rotating 2s linear infinite;
-	-ms-animation: rotating 2s linear infinite;
-	-o-animation: rotating 2s linear infinite;
-	animation: rotating 2s linear infinite;
-}
 .board-bottom {
 	background-position: bottom;
 	background-repeat: no-repeat;

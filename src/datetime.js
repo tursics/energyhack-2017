@@ -13,11 +13,7 @@ export function initDateTime() {
 //-----------------------------------------------------------------------
 
 export function increaseDateTime() {
-	var sec = currentTime.getSeconds();
-
-	sec += speed;
-
-	currentTime.setSeconds(sec);
+	currentTime = new Date(currentTime.getTime() + (1000 * speed));
 
 	console.log(currentTime.toString());
 }

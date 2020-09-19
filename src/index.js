@@ -1,6 +1,8 @@
 //-----------------------------------------------------------------------
 
+import {initAorta} from './aorta';
 import * as board from './board';
+import {initDateTime} from './datetime';
 import * as hexagon from './hexagon';
 import * as pig from './pig';
 import * as waterTank from './watertank';
@@ -54,6 +56,7 @@ function initScreen() {
 	waterTank.init(node);
 //	initWorker(node);
 	initEnd(node);
+	initDateTime();
 
 	board.initEvents();
 	hexagon.initEvents();
@@ -61,6 +64,8 @@ function initScreen() {
 	waterTurbine.initEvents();
 	pig.initEvents();
 	initEndEvent(node);
+
+	initAorta();
 }
 
 initScreen();

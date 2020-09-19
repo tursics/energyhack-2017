@@ -1,5 +1,4 @@
-﻿Energy Hack 2017
-================
+﻿## Energy Hack 2017
 
 Beim [Energy Hack 2017](https://energyhack.de/) Hackathon am 22. bis 23.09.2017 in Berlin habe ich und mein Team gewonnen.
 In der Kategorie "Infrastruktur" haben wir mit offene Daten der Berliner Wasserbetriebe eine Simulation eines Abwasserwerkes gebaut.
@@ -19,6 +18,17 @@ Aber überlaufen dürfen die Tanks nicht.
 ![](https://raw.githubusercontent.com/tursics/energyhack-2017/master/docs/img3.png?token=AFJ-kAy4FQsGLctYV8mfZp5xRpg1QFZhks5Z1A2BwA%3D%3D)
 
 Auch darf das Abwasser nicht länger als 6 Stunden im Becken bleiben. Sonst - ist das Spiel vorbei.
+
+## zweiter Version
+
+Auf dem Folge-Hackathon wurde das Spiel überarbeitet. Weiterhin kann man die Turbinen steuern, die Darstellung ist kompakter ausgefallen.
+Der Gesamtstromverbrauch wird angezeigt.
+Auf der rechten Seite werden verschiedene Stromerzeuger dargestellt. Den Strommix kann man anpassen.
+Die Gesamtstromerzeugung wird ebenfalls angezeigt.
+
+![](https://raw.githubusercontent.com/tursics/energyhack-2017/master/docs/img4.png?token=AFJ-kAy4FQsGLctYV8mfZp5xRpg1QFZhks5Z1A2BwA%3D%3D)
+
+## To do
 
 Daten (muss noch eingebaut werden):
 - Wasserbetriebe (15 minütige Werte der Abwassermengen aus dem Jahr 2016)

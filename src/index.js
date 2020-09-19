@@ -2,7 +2,7 @@
 
 import {initAorta} from './aorta';
 import * as board from './board';
-import {initDateTime} from './datetime';
+import {initDateTime, setSpeedInMinutes} from './datetime';
 import * as hexagon from './hexagon';
 import * as pig from './pig';
 import * as waterTank from './watertank';
@@ -64,6 +64,8 @@ function initScreen() {
 	waterTurbine.initEvents();
 	pig.initEvents();
 	initEndEvent(node);
+
+	setSpeedInMinutes(15);
 
 	initAorta();
 }

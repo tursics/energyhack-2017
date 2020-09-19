@@ -19,3 +19,15 @@ export function increaseDateTime() {
 }
 
 //-----------------------------------------------------------------------
+
+export function setSpeedInSeconds(seconds) {
+	speed = seconds;
+}
+
+//-----------------------------------------------------------------------
+
+export function setSpeedInMinutes(minutes) {
+	speed = minutes * 60;
+}
+
+//-----------------------------------------------------------------------

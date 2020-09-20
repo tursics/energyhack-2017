@@ -300,6 +300,20 @@ body {
 	-o-animation: coineating .5s linear infinite;
 	animation: coineating .5s linear infinite;
 }
+.board-bottom #clock {
+	background: #fff;
+	opacity: 0.8;
+	position: fixed;
+	z-index: 102;
+	left: 10%;
+	bottom: 5%;
+	pointer-events: none;
+	width: 10rem;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1rem;
+	text-align: center;
+}
 .end {
 	z-index: 200;
 	position: fixed;

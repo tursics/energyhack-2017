@@ -7,6 +7,7 @@ import * as hexagon from './hexagon';
 import * as pig from './pig';
 import * as waterTank from './watertank';
 import * as waterTurbine from './waterturbine';
+import {initClockComponent} from './component/clock';
 
 //-----------------------------------------------------------------------
 
@@ -56,6 +57,7 @@ function initScreen() {
 	waterTank.init(node);
 //	initWorker(node);
 	initEnd(node);
+	initClockComponent(node);
 	initDateTime();
 
 	board.initEvents();

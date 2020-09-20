@@ -1,6 +1,7 @@
 //-----------------------------------------------------------------------
 
 import {increaseDateTime} from './datetime';
+import {updateClockComponent} from './component/clock';
 
 //-----------------------------------------------------------------------
 
@@ -12,8 +13,9 @@ var lastTick = undefined;
 
 //-----------------------------------------------------------------------
 
-function pulse() {
+function pulseEverySecond() {
 	increaseDateTime();
+	updateClockComponent();
 }
 
 //-----------------------------------------------------------------------
@@ -26,7 +28,7 @@ function step(timestamp) {
 	var elapsed = Math.trunc((timestamp - start) / 1000);
 	if (elapsed !== lastTick) {
 		lastTick = elapsed;
-		pulse();
+		pulseEverySecond();
 	}
 
 	requestId = requestAnimationFrame(step);

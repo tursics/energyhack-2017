@@ -21,12 +21,19 @@ export function increaseDateTime() {
 
 export function setSpeedInSeconds(seconds) {
 	speed = seconds;
+
+	currentTime.setMilliseconds(0);
+	currentTime.setSeconds(Math.trunc(currentTime.getSeconds() / seconds) * seconds);
 }
 
 //-----------------------------------------------------------------------
 
 export function setSpeedInMinutes(minutes) {
 	speed = minutes * 60;
+
+	currentTime.setMilliseconds(0);
+	currentTime.setSeconds(0);
+	currentTime.setMinutes(Math.trunc(currentTime.getMinutes() / minutes) * minutes);
 }
 
 //-----------------------------------------------------------------------

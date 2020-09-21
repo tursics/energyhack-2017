@@ -14,8 +14,36 @@ export function initDateTime() {
 
 //-----------------------------------------------------------------------
 
+function addSecondsWithoutDayLightSaving(seconds) {
+	const calculatedTime = new Date(currentTime.getTime() + 1000 * seconds);
+
+	const sec = currentTime.getSeconds() + seconds;
+	const min = currentTime.getMinutes() + Math.trunc(sec / 60);
+	const hours = (currentTime.getHours() + Math.trunc(min / 60)) % 24;
+
+	if (calculatedTime.getHours() === hours) {
+		currentTime = calculatedTime;
+	} else {
+		const diff = calculatedTime.getHours() - hours;
+
+		if (diff === 23) {
+			currentTime = new Date(currentTime.getTime() + 1000 * seconds + 3600000);
+		} else if (diff === -1) {
+			currentTime = new Date(currentTime.getTime() + 1000 * seconds + 3600000);
+		} else if (diff === 1) {
+			currentTime = new Date(currentTime.getTime() + 1000 * seconds - 3600000);
+		} else if (diff === -23) {
+			currentTime = new Date(currentTime.getTime() + 1000 * seconds - 3600000);
+		} else {
+			currentTime = calculatedTime;
+		}
+	}
+}
+
+//-----------------------------------------------------------------------
+
 export function increaseDateTime() {
-	currentTime = new Date(currentTime.getTime() + (1000 * speed));
+	addSecondsWithoutDayLightSaving(speed);
 
 	if (currentTime.getFullYear() > 2016) {
 		currentTime.setFullYear(2016);
